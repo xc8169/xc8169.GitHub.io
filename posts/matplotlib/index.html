@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Note of matplotlib // Xiao Chuang</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="xiaochuang" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://xc8169.github.io/css/main.min.3daee735ccfbae2550bbc8a59c52be1520b2dd57a6e2944b637974876d92b8eb.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Note of matplotlib"/>
+<meta name="twitter:description" content="这算是我自己学matplotlib的时候，为了熟悉各个功能和函数，简单画的几张图。我觉得可能也不会有其他人看，就允许我简单用中文写。
+绘制折线图 from matplotlib import pyplot as plt import numpy as np x = range(2,26,2) y = [15,13,14,15,17,20,25,26,24,22,18,15] #设置图片大小和像素 fig = plt.figure(figsize=(20,10),dpi=80) #绘制x轴的刻度 plt.xticks(range(2,25,2)) plt.yticks(range(min(y),max(y)&#43;1)) plt.plot(x,y) #plt.savefig(&#34;.png&#34;) plt.show() 绘出来的效果如图，我的figsize设置的比较大,dpi设到了80，所以 图片显示出来就会比较大
+Subplot函数绘制多图 #Use subplot to plot 多图 plt.subplot(211) plt.plot(range(50,70),marker=&#34;o&#34;) plt.grid() plt.subplot(212) plt.plot(np.arange(12)**2) 上面的子图用grid绘制了网格，下图就没有了：
+如何绘制标签，利用tight_layout防止标签重合 #how to set label for each figures plt.subplot(211,title=&#34;pic1&#34;,xlabel=&#34;X axis&#34;) plt.plot(range(50,70)) plt.subplot(212,title=&#34;pic2&#34;,xlabel=&#34;X axis&#34;) plt.plot(np.arange(12)**2) #防止标签重叠 plt.tight_layout() 代码中如果没有运行plt.tight_layout()函数得到的结果：
+当运行该函数后得到结果：
+可以很明显看出在多图中plt.tight_layout的效果还是很明显的
+subplots函数 #函数返回值是一个元组，包括一个图形对象和所有的axes对象， #其中axes对象的数量等于nows*ncols， #且每个axes对象均可以通过索引值访问（从0开始） fig,axes = plt.subplots(2,2) ax1 = axes[0][0] x = np."/>
+
+    <meta property="og:title" content="Note of matplotlib" />
+<meta property="og:description" content="这算是我自己学matplotlib的时候，为了熟悉各个功能和函数，简单画的几张图。我觉得可能也不会有其他人看，就允许我简单用中文写。
+绘制折线图 from matplotlib import pyplot as plt import numpy as np x = range(2,26,2) y = [15,13,14,15,17,20,25,26,24,22,18,15] #设置图片大小和像素 fig = plt.figure(figsize=(20,10),dpi=80) #绘制x轴的刻度 plt.xticks(range(2,25,2)) plt.yticks(range(min(y),max(y)&#43;1)) plt.plot(x,y) #plt.savefig(&#34;.png&#34;) plt.show() 绘出来的效果如图，我的figsize设置的比较大,dpi设到了80，所以 图片显示出来就会比较大
+Subplot函数绘制多图 #Use subplot to plot 多图 plt.subplot(211) plt.plot(range(50,70),marker=&#34;o&#34;) plt.grid() plt.subplot(212) plt.plot(np.arange(12)**2) 上面的子图用grid绘制了网格，下图就没有了：
+如何绘制标签，利用tight_layout防止标签重合 #how to set label for each figures plt.subplot(211,title=&#34;pic1&#34;,xlabel=&#34;X axis&#34;) plt.plot(range(50,70)) plt.subplot(212,title=&#34;pic2&#34;,xlabel=&#34;X axis&#34;) plt.plot(np.arange(12)**2) #防止标签重叠 plt.tight_layout() 代码中如果没有运行plt.tight_layout()函数得到的结果：
+当运行该函数后得到结果：
+可以很明显看出在多图中plt.tight_layout的效果还是很明显的
+subplots函数 #函数返回值是一个元组，包括一个图形对象和所有的axes对象， #其中axes对象的数量等于nows*ncols， #且每个axes对象均可以通过索引值访问（从0开始） fig,axes = plt.subplots(2,2) ax1 = axes[0][0] x = np." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xc8169.github.io/posts/matplotlib/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-01-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-12T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://xc8169.github.io/"><img class="app-header-avatar" src="https://pic.jitudisk.com/public/2022/11/06/82b0f0b9011fb.jpeg" alt="xiaochuang" /></a>
+      <span class="app-header-title">Xiao Chuang</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/home/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/posts/">Posts</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/life/">my life</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">Contact</a>
+      </nav>
+      <p>Welcome to my blog</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/xc8169" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://twitter.com/xiao85897107" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>Twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:xiaochuang@mail.ustc.edu.cn" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Mail</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Note of matplotlib</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jan 12, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://xc8169.github.io/tags/ai/">AI</a>
+              <a class="tag" href="https://xc8169.github.io/tags/python/">Python</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>这算是我自己学matplotlib的时候，为了熟悉各个功能和函数，简单画的几张图。我觉得可能也不会有其他人看，就允许我简单用中文写。</p>
+<h2 id="绘制折线图">绘制折线图</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> matplotlib <span style="color:#f92672">import</span> pyplot <span style="color:#66d9ef">as</span> plt
+<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+
+x <span style="color:#f92672">=</span> range(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">26</span>,<span style="color:#ae81ff">2</span>)
+y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">17</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">25</span>,<span style="color:#ae81ff">26</span>,<span style="color:#ae81ff">24</span>,<span style="color:#ae81ff">22</span>,<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">15</span>]
+<span style="color:#75715e">#设置图片大小和像素</span>
+fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">10</span>),dpi<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span>)
+
+<span style="color:#75715e">#绘制x轴的刻度</span>
+plt<span style="color:#f92672">.</span>xticks(range(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">25</span>,<span style="color:#ae81ff">2</span>))
+plt<span style="color:#f92672">.</span>yticks(range(min(y),max(y)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
+
+plt<span style="color:#f92672">.</span>plot(x,y)
+<span style="color:#75715e">#plt.savefig(&#34;.png&#34;)</span>
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p>绘出来的效果如图，我的figsize设置的比较大,dpi设到了80，所以 图片显示出来就会比较大<br>
+<img src="https://pic.jitudisk.com/public/2022/11/06/3809315917069.jpg" alt="1.jpg"></p>
+<h2 id="subplot函数绘制多图">Subplot函数绘制多图</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#Use subplot to plot 多图</span>
+plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">211</span>)
+
+plt<span style="color:#f92672">.</span>plot(range(<span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">70</span>),marker<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;o&#34;</span>)
+plt<span style="color:#f92672">.</span>grid()
+
+plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">212</span>)
+
+plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">12</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+</code></pre></div><p>上面的子图用grid绘制了网格，下图就没有了：<br>
+<img src="https://pic.jitudisk.com/public/2022/11/06/f93a20a81b14b.jpg" alt="3.jpg"></p>
+<h2 id="如何绘制标签利用tight_layout防止标签重合">如何绘制标签，利用tight_layout防止标签重合</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#how to set label for each figures</span>
+plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">211</span>,title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pic1&#34;</span>,xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X axis&#34;</span>)
+
+plt<span style="color:#f92672">.</span>plot(range(<span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">70</span>))
+
+plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">212</span>,title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pic2&#34;</span>,xlabel<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X axis&#34;</span>)
+
+plt<span style="color:#f92672">.</span>plot(np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">12</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)
+
+<span style="color:#75715e">#防止标签重叠</span>
+plt<span style="color:#f92672">.</span>tight_layout()
+</code></pre></div><p>代码中如果没有运行plt.tight_layout()函数得到的结果：<br>
+<img src="https://pic.jitudisk.com/public/2022/11/06/bfdce74363b17.jpg" alt="4.jpg"></p>
+<p>当运行该函数后得到结果：<br>
+<img src="https://pic.jitudisk.com/public/2022/11/06/14cc4017c1129.jpg" alt="5.jpg"></p>
+<p>可以很明显看出在多图中plt.tight_layout的效果还是很明显的</p>
+<h2 id="subplots函数">subplots函数</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#函数返回值是一个元组，包括一个图形对象和所有的axes对象，</span>
+<span style="color:#75715e">#其中axes对象的数量等于nows*ncols，</span>
+<span style="color:#75715e">#且每个axes对象均可以通过索引值访问（从0开始）</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig,axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)
+
+ax1 <span style="color:#f92672">=</span> axes[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>]
+
+x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>)
+
+ax1<span style="color:#f92672">.</span>plot(x,x<span style="color:#f92672">*</span>x)
+
+ax1<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#34;square&#34;</span>)
+
+
+axes[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>plot(x,np<span style="color:#f92672">.</span>sqrt(x))
+axes[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;aqure root&#39;</span>)
+
+
+axes[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot(x,np<span style="color:#f92672">.</span>exp(x))
+axes[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;exp&#39;</span>)
+
+axes[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>plot(x,np<span style="color:#f92672">.</span>log10(x))
+axes[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;log&#39;</span>)
+
+plt<span style="color:#f92672">.</span>tight_layout()
+</code></pre></div><p>画出来效果是这样<br>
+<img src="https://pic.jitudisk.com/public/2022/11/06/1e11be08dbf9f.jpg" alt="Unknown.jpg"></p>
+<h2 id="绘制不规则子图">绘制不规则子图</h2>
+<p>简单利用不同子图的拼接就可以实现一些简单的不规则子图</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">121</span>,facecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
+
+plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">222</span>,facecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
+
+plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">224</span>,facecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
+
+plt<span style="color:#f92672">.</span>tight_layout()
+</code></pre></div><p>效果如下：<br>
+<img src="https://pic.jitudisk.com/public/2022/11/06/b9aa30d6f58f3.jpg" alt="2.jpg"></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

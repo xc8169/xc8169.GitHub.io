@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Internship (S-P converted phase picking) // Xiao Chuang</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="xiaochuang" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://xc8169.github.io/css/main.min.3daee735ccfbae2550bbc8a59c52be1520b2dd57a6e2944b637974876d92b8eb.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Internship (S-P converted phase picking)"/>
+<meta name="twitter:description" content="Introduction  This is my summer internship under the instruction of Professor Xiaowei Chen in The Ohio State University. Our purpse is to train a new DAS deep learning model for forge to automate the progress of picking the arrival time of S-P converted wave.  What is S-P converted wave   In sedimentary regions, there is a layer of sediment atop the crystalline basement. Various seismic phases are observed due to conversion of waves at the interface, such as the Sp wave, i."/>
+
+    <meta property="og:title" content="Internship (S-P converted phase picking)" />
+<meta property="og:description" content="Introduction  This is my summer internship under the instruction of Professor Xiaowei Chen in The Ohio State University. Our purpse is to train a new DAS deep learning model for forge to automate the progress of picking the arrival time of S-P converted wave.  What is S-P converted wave   In sedimentary regions, there is a layer of sediment atop the crystalline basement. Various seismic phases are observed due to conversion of waves at the interface, such as the Sp wave, i." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xc8169.github.io/posts/s-pwave/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-01T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://xc8169.github.io/"><img class="app-header-avatar" src="https://pic.jitudisk.com/public/2022/11/06/82b0f0b9011fb.jpeg" alt="xiaochuang" /></a>
+      <span class="app-header-title">Xiao Chuang</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/home/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/posts/">Posts</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/life/">my life</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">Contact</a>
+      </nav>
+      <p>Welcome to my blog</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/xc8169" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://twitter.com/xiao85897107" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>Twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:xiaochuang@mail.ustc.edu.cn" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Mail</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Internship (S-P converted phase picking)</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 1, 2022
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          6 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://xc8169.github.io/tags/das/">DAS</a>
+              <a class="tag" href="https://xc8169.github.io/tags/python/">Python</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h2 id="introduction">Introduction</h2>
+<ul>
+<li>This is my summer internship under the instruction of Professor <a href="https://sites.google.com/view/xiaoweichen/research">Xiaowei Chen</a> in The Ohio State University. Our purpse is to train a new DAS deep learning model for forge to automate the progress of picking the arrival time of S-P converted wave.</li>
+</ul>
+<h2 id="what-is-s-p-converted-wave">What is S-P converted wave</h2>
+<ul>
+<li>
+<p>In sedimentary regions, there is a layer of sediment atop the crystalline basement. Various seismic phases are observed due to
+conversion of waves at the interface, such as the Sp wave, i.e. the P wave converted from the incident S wave, and the Ps wave, i.e. the S wave converted from the incident P wave. When the seismograph is installed in the borehole, the
+converted wave will consist of the direct wave and its surface re-flected wave, as well as the P waves.</p>
+</li>
+<li>
+<p>Here&rsquo;s an great example of earthquake evnet in DAS:<br>
+<img src="https://pic.jitudisk.com/public/2022/10/24/47cb5e6975ec8.jpg" alt="image0012.jpg"> .<br>
+You can see there are three kind of waves in the picture: P wave, S wave and S-P converted wave. And the S-P converted wave in the middle is similar to the P-wave in shape, but has a large arrival time difference.</p>
+</li>
+<li>
+<p>And recently the S-P converted wave is applied into many places and get some great effects. For example, Some researchers develop a new method of resolving very accurately the focal depth for local earthquakes in the sedimentary regions by using P and S to P converted wave (Sp) at the sedimentary interface <a href="https://linkinghub.elsevier.com/retrieve/pii/S0012821X18303571">[1]Dong, Yibing, Sidao, et al. Crustal rheology from focal depths in the North China Basin.</a> So it is meaningful to train a new Deep neural network,like phasenet, that picks the arrival time of S_P wave automatically.</p>
+</li>
+</ul>
+<h2 id="manually-pick-phases">Manually pick phases</h2>
+<ul>
+<li>
+<p>We select 398 earthquake events happened in Ohio at Sept 2021 recorded by DAS. We hope to pick P, S and S-P waveds in these events manually, and then use the picks as labels to train an new Deep learning model.
+However, not all waves in all events are as clear as the above examples. Some events have lots of noise, some events' waves are so small to recognize. Ultimately，After spending one week, I finally picked up S-P waves in 89 events.</p>
+</li>
+<li>
+<p>The picks shown in figure may look like this.<br>
+<img src="https://pic.jitudisk.com/public/2022/10/24/0615ee26223ef.jpg" alt="414_1000Hz2.jpg"></p>
+</li>
+</ul>
+<h2 id="calculate-snr-and-refine-picks">Calculate SNR and Refine picks</h2>
+<ul>
+<li>
+<p>As what you can see in the figure event 414, there are some errors between the real wave and red picking line. In order to make sure whether these picks match arrival time, We calculate the signal-to-noise ratio in frequency domain.</p>
+</li>
+<li>
+<p>I try to select the time with highest SNR 0.1s before and after the picks as the arrival time. However, the repicks look so bad with jagged jumps, like this:<br>
+<img src="https://pic.jitudisk.com/public/2022/10/24/ad37695a40509.jpg" alt="3.jpg"></p>
+</li>
+<li>
+<p>Then after talking with Prof.chen, we think these small changes may not bring too much influence to the training effect, and the program should be able to handle the small errors. So now I am working in calculate SNR of diferent channels of each events and plot figures on the dominate frequency of some channels with high SNR ratio. We would like to see the phase picks with high SNR and if those arrivals can differentiate their depth and location.</p>
+</li>
+<li>
+<p>One example of 148 event:<br>
+<img src="https://pic.jitudisk.com/public/2022/10/24/47e2f12184846.jpg" alt="spec_148_1000Hz_trim_test.jpg"> .<br>
+Red lines - P wave; Orange lines - S-P converted wave; Purple lines - S wave.<br>
+And the thick lines in each subgraph is the average SNR of each channel.</p>
+</li>
+</ul>
+<h2 id="a-interesting-phenomenon-of-path-effect">A interesting phenomenon of path effect</h2>
+<ul>
+<li>
+<p>When I look through all 89 events SNR plots, I find a interesting phenomenon that there are peaks at frequence about 300Hz in S_P and S waves plots of some events, like these two figures:</p>
+</li>
+<li>
+<p><img src="https://pic.jitudisk.com/public/2022/11/05/1b9f3a84be167.jpg" alt="event121_snr.jpg"> .<br>
+Event 121</p>
+</li>
+<li>
+<p><img src="https://pic.jitudisk.com/public/2022/11/05/93be2f0b9d00c.jpg" alt="event175_snr.jpg"> .<br>
+Event 175</p>
+</li>
+<li>
+<p>The other events' plots are shown as this, whose shape is similar with events before but lacking the convex peak.<br>
+<img src="https://pic.jitudisk.com/public/2022/11/05/1dc827066f807.jpg" alt="event160_snr.jpg"> .</p>
+</li>
+<li>
+<p>Professor Chen told me that this possibly is just a path effect. I then checked those channels having those peaks and found  they are almost at where the S-wave and S-P transition waves overlap, about 980 channel(white circle in figures).  And these channels also have very high SNR up to 5.<br>
+<img src="https://pic.jitudisk.com/public/2022/11/05/9558983d405dd.jpg" alt="place_conbine.jpg"></p>
+</li>
+<li>
+<p>This is the 985 channel of event 175. We can see the S-P and S wave are hard to seperate. So the peak may be partially because the effect pf mixed S-P and S wave.<br>
+<img src="https://pic.jitudisk.com/public/2022/11/05/8a35f1c50d07e.jpg" alt="175channel9852.jpg"></p>
+</li>
+<li>
+<p>And Once this channel is covered by some noise, its performance on the snr plot will become not so clear.<br>
+<img src="https://pic.jitudisk.com/public/2022/11/05/7ec705b267fbe.jpg" alt="175channel994.jpg"></p>
+</li>
+</ul>
+<p><!-- raw HTML omitted --></p>
+<ul>
+<li>
+<p>Here are part of channels' SNR data in event 175. 985 channel has highest SNR</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">trace</th>
+<th style="text-align:center">Psnr_avg</th>
+<th style="text-align:center">Ssnr_avg</th>
+<th style="text-align:center">SPsnr_avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">981</td>
+<td style="text-align:center">1.505</td>
+<td style="text-align:center">4.899</td>
+<td style="text-align:center">4.163</td>
+</tr>
+<tr>
+<td style="text-align:center">982</td>
+<td style="text-align:center">1.579</td>
+<td style="text-align:center">5.251</td>
+<td style="text-align:center">4.659</td>
+</tr>
+<tr>
+<td style="text-align:center">983</td>
+<td style="text-align:center">1.287</td>
+<td style="text-align:center">4.757</td>
+<td style="text-align:center">3.948</td>
+</tr>
+<tr>
+<td style="text-align:center">984</td>
+<td style="text-align:center">1.192</td>
+<td style="text-align:center">4.868</td>
+<td style="text-align:center">4.026</td>
+</tr>
+<tr>
+<td style="text-align:center">985</td>
+<td style="text-align:center">1.536</td>
+<td style="text-align:center">6.272</td>
+<td style="text-align:center">5.123</td>
+</tr>
+<tr>
+<td style="text-align:center">986</td>
+<td style="text-align:center">1.715</td>
+<td style="text-align:center">5.777</td>
+<td style="text-align:center">4.335</td>
+</tr>
+<tr>
+<td style="text-align:center">988</td>
+<td style="text-align:center">1.391</td>
+<td style="text-align:center">2.994</td>
+<td style="text-align:center">2.312</td>
+</tr>
+<tr>
+<td style="text-align:center">989</td>
+<td style="text-align:center">1.328</td>
+<td style="text-align:center">2.558</td>
+<td style="text-align:center">2.027</td>
+</tr>
+<tr>
+<td style="text-align:center">990</td>
+<td style="text-align:center">1.254</td>
+<td style="text-align:center">2.568</td>
+<td style="text-align:center">2.061</td>
+</tr>
+<tr>
+<td style="text-align:center">991</td>
+<td style="text-align:center">1.365</td>
+<td style="text-align:center">2.785</td>
+<td style="text-align:center">2.316</td>
+</tr>
+<tr>
+<td style="text-align:center">992</td>
+<td style="text-align:center">1.432</td>
+<td style="text-align:center">3.01</td>
+<td style="text-align:center">2.34</td>
+</tr>
+<tr>
+<td style="text-align:center">993</td>
+<td style="text-align:center">1.748</td>
+<td style="text-align:center">4.129</td>
+<td style="text-align:center">3.069</td>
+</tr>
+<tr>
+<td style="text-align:center">994</td>
+<td style="text-align:center">1.426</td>
+<td style="text-align:center">3.4</td>
+<td style="text-align:center">2.716</td>
+</tr>
+<tr>
+<td style="text-align:center">995</td>
+<td style="text-align:center">1.298</td>
+<td style="text-align:center">3.025</td>
+<td style="text-align:center">2.36</td>
+</tr>
+<tr>
+<td style="text-align:center">996</td>
+<td style="text-align:center">1.906</td>
+<td style="text-align:center">3.045</td>
+<td style="text-align:center">2.355</td>
+</tr>
+<tr>
+<td style="text-align:center">997</td>
+<td style="text-align:center">1.649</td>
+<td style="text-align:center">2.614</td>
+<td style="text-align:center">2.034</td>
+</tr>
+<tr>
+<td style="text-align:center">998</td>
+<td style="text-align:center">1.275</td>
+<td style="text-align:center">1.97</td>
+<td style="text-align:center">1.608</td>
+</tr>
+<tr>
+<td style="text-align:center">999</td>
+<td style="text-align:center">0.942</td>
+<td style="text-align:center">1.457</td>
+<td style="text-align:center">1.477</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Based on the data and images shown above, we can conclude that this peak is a path effect, which is mainly a sharp increase in signal-to-noise ratio caused by the mixing of S-wave and S-P conversion waves.</p>
+</li>
+<li>
+<p>I also plot the location of some events with peak and withou peak. But it makes no sense. Apparently there is no pattern at all.<br>
+<img src="https://pic.jitudisk.com/public/2022/11/05/ed3380afa8e8c.png" alt="location.png">
+ocations of all 57 evnets, the rad circle are events without peak, blue triangle are events with peak.</p>
+</li>
+</ul>
+<h2 id="exam-the-location">Exam the location</h2>
+<ul>
+<li>
+<p>Professor Chen used to use geophone data to cluster these repeaking events to exam whether each repeating event comes from different location and got seven repeatingroups(defined with CC&gt;0.95 from 16 geophone channels). The waves in geophone data are sparse and limited.（Since this is not a work that I am involved in, I don&rsquo;t know some of the specific details of it yet) .</p>
+</li>
+<li>
+<p>Figures (a) and (b) are the forward waveform modeling and travel time modeling. Figures (c) and (d) are comparison between the previous data and the das data. The red arrows represent the arrival time difference between the P and S_P waves<br>
+<img src="https://pic.jitudisk.com/public/2022/11/05/7be5caada1681.jpg" alt="arrival_time.jpg"></p>
+</li>
+<li>
+<p>Now we have got the arrival time of P, S-P, S wave and each channel&rsquo;s SNR, so we can do the same work in DAS data. We calculate the interval time of SP-P and S-P which reprent the location imformation.</p>
+</li>
+<li>
+<p>Here is an example figure to summarize the SP-P and S-P time for seven repeating groups. The dashed line is SP-P and solid line is S-P. The color represents different repeating clusters.<br>
+<img src="https://pic.jitudisk.com/public/2022/11/05/1136535e8bcc6.png" alt="cluster_repeater_phase_DAS_summary.png"></p>
+</li>
+</ul>
+<h2 id="the-next-work">The next work</h2>
+<p>Of course, this project is now far from over. Next, we will use the picks to train a new AI model which we plan to use <a href="https://ai4eps.github.io/homepage/">Zhu Weiqiang</a>&rsquo;s Phasenet model. At present, Professor Chen&rsquo;s postdoc Pranshu is contacting Weiqiang to discuss training and model related issues. I will try to participate in it later.</p>
+<p>If there is any new progress in the future, I will continue to update this blog.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xiao Chuang</title>
+    <link>https://xc8169.github.io/</link>
+    <description>Recent content on Xiao Chuang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xc8169.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Delicacy</title>
+      <link>https://xc8169.github.io/life/food/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/life/food/</guid>
+      <description>Some delicacy This is one of most famous chinese food called Shaomai (Steamed Pork Dumplings)
+The special food called hundun.
+jianjiao(Dumplings)</description>
+    </item>
+    
+    <item>
+      <title>Trips</title>
+      <link>https://xc8169.github.io/life/geology/</link>
+      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/life/geology/</guid>
+      <description>In October 2022 I’ve visited Chaohu, Anhui province in china with my classmates for a week. We drove a lot through the beautiful natural scenery and saw a lot of different rocks: basal conglomerate, siltsstone, shale, bioclastic limestone.</description>
+    </item>
+    
+    <item>
+      <title>Internship (S-P converted phase picking)</title>
+      <link>https://xc8169.github.io/posts/s-pwave/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/posts/s-pwave/</guid>
+      <description>Introduction  This is my summer internship under the instruction of Professor Xiaowei Chen in The Ohio State University. Our purpse is to train a new DAS deep learning model for forge to automate the progress of picking the arrival time of S-P converted wave.  What is S-P converted wave   In sedimentary regions, there is a layer of sediment atop the crystalline basement. Various seismic phases are observed due to conversion of waves at the interface, such as the Sp wave, i.</description>
+    </item>
+    
+    <item>
+      <title>Detection of aftershocks using AI</title>
+      <link>https://xc8169.github.io/posts/aftershocks/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/posts/aftershocks/</guid>
+      <description>Advisor Teacher:Zefeng Li .
+June 2021 - Present
+Aim Combining artificial intelligence and new methods of signal processing to improve the aftershock detection capability within 1 hour after an earthquake.
+Method Training a net to separate superimposed seismic waveforms from the same area one year after the Ridgecrest earthquake, based on PhaseNet. Useing this net to recognize small aftershock waveforms after earthquakes</description>
+    </item>
+    
+    <item>
+      <title>Rock Image-Classification</title>
+      <link>https://xc8169.github.io/posts/rockclassification/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/posts/rockclassification/</guid>
+      <description>This is an assignment for a elective course I took, named AI in geoscience. The course&amp;rsquo;s teacher is Professor Xinming Wu
+Sep 2021 - Jan 2022
+What is the course about  In this course, students learn the basic concepts of artificial intelligence (AI) and its applications in Geosciences.Based on the studying of the course students finally design convolutional neural network(CNN) to achieve the task of rock image identification (igneous rocks,sediment rocks,metamorphic rocks).</description>
+    </item>
+    
+    <item>
+      <title>How built a blog</title>
+      <link>https://xc8169.github.io/posts/buildblog/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/posts/buildblog/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
+▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Note of matplotlib</title>
+      <link>https://xc8169.github.io/posts/matplotlib/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/posts/matplotlib/</guid>
+      <description>这算是我自己学matplotlib的时候，为了熟悉各个功能和函数，简单画的几张图。我觉得可能也不会有其他人看，就允许我简单用中文写。
+绘制折线图 from matplotlib import pyplot as plt import numpy as np x = range(2,26,2) y = [15,13,14,15,17,20,25,26,24,22,18,15] #设置图片大小和像素 fig = plt.figure(figsize=(20,10),dpi=80) #绘制x轴的刻度 plt.xticks(range(2,25,2)) plt.yticks(range(min(y),max(y)+1)) plt.plot(x,y) #plt.savefig(&amp;#34;.png&amp;#34;) plt.show() 绘出来的效果如图，我的figsize设置的比较大,dpi设到了80，所以 图片显示出来就会比较大
+Subplot函数绘制多图 #Use subplot to plot 多图 plt.subplot(211) plt.plot(range(50,70),marker=&amp;#34;o&amp;#34;) plt.grid() plt.subplot(212) plt.plot(np.arange(12)**2) 上面的子图用grid绘制了网格，下图就没有了：
+如何绘制标签，利用tight_layout防止标签重合 #how to set label for each figures plt.subplot(211,title=&amp;#34;pic1&amp;#34;,xlabel=&amp;#34;X axis&amp;#34;) plt.plot(range(50,70)) plt.subplot(212,title=&amp;#34;pic2&amp;#34;,xlabel=&amp;#34;X axis&amp;#34;) plt.plot(np.arange(12)**2) #防止标签重叠 plt.tight_layout() 代码中如果没有运行plt.tight_layout()函数得到的结果：
+当运行该函数后得到结果：
+可以很明显看出在多图中plt.tight_layout的效果还是很明显的
+subplots函数 #函数返回值是一个元组，包括一个图形对象和所有的axes对象， #其中axes对象的数量等于nows*ncols， #且每个axes对象均可以通过索引值访问（从0开始） fig,axes = plt.subplots(2,2) ax1 = axes[0][0] x = np.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://xc8169.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/about/</guid>
+      <description>Thank you for your visiting 👏 This is my first attempt to make my own blogs page, so if there are any shortcomings or mistakes in both research or web production, please feel free to point them out.
+You can contact me by github or e-mail: xiaochuang@mail.ustc.edu.cn.
+I&amp;rsquo;m looking forward to your advice, which is very important for me.🙇</description>
+    </item>
+    
+    <item>
+      <title>Home</title>
+      <link>https://xc8169.github.io/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/home/</guid>
+      <description>Bio Hi, I&amp;rsquo;m Xiao Chuang, a senior student at School of Earth and Space Sciences, The University of Science and Technology of China(Sept.2019 - July.2023). This is a homepage in order to share my life in USTC and blog about my experiences in studying geophysics, to help others, or just to keep track of what I’ve done.
+Have a look around and feel free to share!
+ Check out my resume  Interests My current research interests is how to apply Machine learning methods to DAS(Distributed acoustic sensing) data.</description>
+    </item>
+    
+  </channel>
+</rss>

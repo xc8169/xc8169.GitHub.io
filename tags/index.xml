@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Xiao Chuang</title>
+    <link>https://xc8169.github.io/tags/</link>
+    <description>Recent content in Tags on Xiao Chuang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xc8169.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DAS</title>
+      <link>https://xc8169.github.io/tags/das/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/tags/das/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://xc8169.github.io/tags/machine-learning/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://xc8169.github.io/tags/python/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>S_P converted wave</title>
+      <link>https://xc8169.github.io/tags/s_p-converted-wave/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/tags/s_p-converted-wave/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AI</title>
+      <link>https://xc8169.github.io/tags/ai/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://xc8169.github.io/tags/hugo/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll</title>
+      <link>https://xc8169.github.io/tags/jekyll/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

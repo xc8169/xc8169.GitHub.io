@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on Xiao Chuang</title>
+    <link>https://xc8169.github.io/tags/ai/</link>
+    <description>Recent content in AI on Xiao Chuang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://xc8169.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rock Image-Classification</title>
+      <link>https://xc8169.github.io/posts/rockclassification/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/posts/rockclassification/</guid>
+      <description>This is an assignment for a elective course I took, named AI in geoscience. The course&amp;rsquo;s teacher is Professor Xinming Wu
+Sep 2021 - Jan 2022
+What is the course about  In this course, students learn the basic concepts of artificial intelligence (AI) and its applications in Geosciences.Based on the studying of the course students finally design convolutional neural network(CNN) to achieve the task of rock image identification (igneous rocks,sediment rocks,metamorphic rocks).</description>
+    </item>
+    
+    <item>
+      <title>Note of matplotlib</title>
+      <link>https://xc8169.github.io/posts/matplotlib/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/posts/matplotlib/</guid>
+      <description>这算是我自己学matplotlib的时候，为了熟悉各个功能和函数，简单画的几张图。我觉得可能也不会有其他人看，就允许我简单用中文写。
+绘制折线图 from matplotlib import pyplot as plt import numpy as np x = range(2,26,2) y = [15,13,14,15,17,20,25,26,24,22,18,15] #设置图片大小和像素 fig = plt.figure(figsize=(20,10),dpi=80) #绘制x轴的刻度 plt.xticks(range(2,25,2)) plt.yticks(range(min(y),max(y)+1)) plt.plot(x,y) #plt.savefig(&amp;#34;.png&amp;#34;) plt.show() 绘出来的效果如图，我的figsize设置的比较大,dpi设到了80，所以 图片显示出来就会比较大
+Subplot函数绘制多图 #Use subplot to plot 多图 plt.subplot(211) plt.plot(range(50,70),marker=&amp;#34;o&amp;#34;) plt.grid() plt.subplot(212) plt.plot(np.arange(12)**2) 上面的子图用grid绘制了网格，下图就没有了：
+如何绘制标签，利用tight_layout防止标签重合 #how to set label for each figures plt.subplot(211,title=&amp;#34;pic1&amp;#34;,xlabel=&amp;#34;X axis&amp;#34;) plt.plot(range(50,70)) plt.subplot(212,title=&amp;#34;pic2&amp;#34;,xlabel=&amp;#34;X axis&amp;#34;) plt.plot(np.arange(12)**2) #防止标签重叠 plt.tight_layout() 代码中如果没有运行plt.tight_layout()函数得到的结果：
+当运行该函数后得到结果：
+可以很明显看出在多图中plt.tight_layout的效果还是很明显的
+subplots函数 #函数返回值是一个元组，包括一个图形对象和所有的axes对象， #其中axes对象的数量等于nows*ncols， #且每个axes对象均可以通过索引值访问（从0开始） fig,axes = plt.subplots(2,2) ax1 = axes[0][0] x = np.</description>
+    </item>
+    
+  </channel>
+</rss>

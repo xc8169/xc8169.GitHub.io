@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DAS on Xiao Chuang</title>
+    <link>https://xc8169.github.io/tags/das/</link>
+    <description>Recent content in DAS on Xiao Chuang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xc8169.github.io/tags/das/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Internship (S-P converted phase picking)</title>
+      <link>https://xc8169.github.io/posts/s-pwave/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/posts/s-pwave/</guid>
+      <description>Introduction  This is my summer internship under the instruction of Professor Xiaowei Chen in The Ohio State University. Our purpse is to train a new DAS deep learning model for forge to automate the progress of picking the arrival time of S-P converted wave.  What is S-P converted wave   In sedimentary regions, there is a layer of sediment atop the crystalline basement. Various seismic phases are observed due to conversion of waves at the interface, such as the Sp wave, i.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Rock Image-Classification // Xiao Chuang</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="xiaochuang" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://xc8169.github.io/css/main.min.3daee735ccfbae2550bbc8a59c52be1520b2dd57a6e2944b637974876d92b8eb.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rock Image-Classification"/>
+<meta name="twitter:description" content="This is an assignment for a elective course I took, named AI in geoscience. The course&rsquo;s teacher is Professor Xinming Wu
+Sep 2021 - Jan 2022
+What is the course about  In this course, students learn the basic concepts of artificial intelligence (AI) and its applications in Geosciences.Based on the studying of the course students finally design convolutional neural network(CNN) to achieve the task of rock image identification (igneous rocks,sediment rocks,metamorphic rocks)."/>
+
+    <meta property="og:title" content="Rock Image-Classification" />
+<meta property="og:description" content="This is an assignment for a elective course I took, named AI in geoscience. The course&rsquo;s teacher is Professor Xinming Wu
+Sep 2021 - Jan 2022
+What is the course about  In this course, students learn the basic concepts of artificial intelligence (AI) and its applications in Geosciences.Based on the studying of the course students finally design convolutional neural network(CNN) to achieve the task of rock image identification (igneous rocks,sediment rocks,metamorphic rocks)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xc8169.github.io/posts/rockclassification/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-02T00:00:00+00:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://xc8169.github.io/"><img class="app-header-avatar" src="https://pic.jitudisk.com/public/2022/11/06/82b0f0b9011fb.jpeg" alt="xiaochuang" /></a>
+      <span class="app-header-title">Xiao Chuang</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/home/">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/posts/">Posts</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/life/">my life</a>
+             - 
+          
+          <a class="app-header-menu-item" href="/about/">Contact</a>
+      </nav>
+      <p>Welcome to my blog</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/xc8169" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://twitter.com/xiao85897107" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>Twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg>
+          </a>
+        
+          <a href="mailto:xiaochuang@mail.ustc.edu.cn" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-mail">
+  <title>Mail</title>
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Rock Image-Classification</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Dec 2, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          4 min read
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://xc8169.github.io/tags/ai/">AI</a>
+              <a class="tag" href="https://xc8169.github.io/tags/python/">Python</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p>This is an assignment for a elective course I took, named AI in geoscience. The course&rsquo;s teacher is Professor <a href="http://cig.ustc.edu.cn">Xinming Wu</a><br>
+Sep 2021 - Jan 2022</p>
+<h3 id="what-is-the-course-about">What is the course about</h3>
+<ul>
+<li>In this course, students learn the basic concepts of artificial intelligence (AI) and its applications in Geosciences.Based on the studying of the course students finally design convolutional neural network(CNN) to achieve the task of rock image identification (igneous rocks,sediment rocks,metamorphic rocks).</li>
+</ul>
+<h3 id="what-is-the-assignment">What is the Assignment</h3>
+<ul>
+<li>In order to get a deep learning model that can classify different kinds of rocks, three Last seniors in Professor Wu&rsquo;s research group have collected lots of pictures of kinds of rocks from the internet. So use these rock images as raw data, we are assigned to train a network to achieve automatic classification of rock images.</li>
+</ul>
+<h3 id="my-net">My net</h3>
+<ul>
+<li>
+<p>At frist, the images of rocks look like these:<br>
+<img src="https://pic.jitudisk.com/public/2022/10/24/1f70d382a7d84.jpg" alt="c00_2.jpg"><img src="https://pic.jitudisk.com/public/2022/10/24/c3835cf2c8a6b.jpg" alt="图层 1.jpg"><img src="https://pic.jitudisk.com/public/2022/10/24/a74accc4b9123.jpg" alt="c00_8.jpg"><img src="https://pic.jitudisk.com/public/2022/10/24/61a088266bf09.jpg" alt="c00_9.jpg"> .</p>
+</li>
+<li>
+<p>The shape and position of rocks in different pictures are different. What I want the net to focus on is the characteristics of rocks rather than the shapes of these small rocks which is not the basis for rock classification, So I crop the images to a certain size before training.The images croped are like these:<br>
+<img src="https://pic.jitudisk.com/public/2022/10/25/bd1dfb39dc19f.jpg" alt="effect.jpg"> .</p>
+</li>
+<li>
+<p>Then for the network I use the efficientnet model and write it on the pytorch platform. To improve the accuracy I also choose the adaptive learning rate. After 30 epochs, The loss decreases to about 10% and tend to be stable.</p>
+</li>
+</ul>
+<h3 id="code">Code</h3>
+<h4 id="import-data">Import data</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+
+<span style="color:#75715e"># train data</span>
+d1_1 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;/home/aistudio/work/train/ig_c0.npy&#39;</span>)
+d2_1 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;/home/aistudio/work/train/se_c1.npy&#39;</span>)
+d3_1 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;/home/aistudio/work/train/me_c2.npy&#39;</span>)
+
+d1 <span style="color:#f92672">=</span> d1_1[:,<span style="color:#ae81ff">80</span>:<span style="color:#ae81ff">160</span>,<span style="color:#ae81ff">80</span>:<span style="color:#ae81ff">160</span>,:]
+d2 <span style="color:#f92672">=</span> d2_1[:,<span style="color:#ae81ff">80</span>:<span style="color:#ae81ff">160</span>,<span style="color:#ae81ff">80</span>:<span style="color:#ae81ff">160</span>,:]
+d3 <span style="color:#f92672">=</span> d3_1[:,<span style="color:#ae81ff">80</span>:<span style="color:#ae81ff">160</span>,<span style="color:#ae81ff">80</span>:<span style="color:#ae81ff">160</span>,:]
+
+data_all <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>concatenate([d1, d2, d3], <span style="color:#ae81ff">0</span>)
+label <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span>d1<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> [<span style="color:#ae81ff">1</span>]<span style="color:#f92672">*</span>d2<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> [<span style="color:#ae81ff">2</span>]<span style="color:#f92672">*</span>d3<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>])
+
+<span style="color:#75715e">#plot some images</span>
+plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">10</span>))
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>):
+    plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, i)
+    plt<span style="color:#f92672">.</span>imshow(data_all[i<span style="color:#f92672">*</span><span style="color:#ae81ff">200</span>, <span style="color:#f92672">...</span>])
+    plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;class: </span><span style="color:#e6db74">{</span>label[i<span style="color:#f92672">*</span><span style="color:#ae81ff">200</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+
+</code></pre></div><h4 id="divide-training-set-and-verification-set">Divide training set and verification set</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> torch.optim <span style="color:#66d9ef">as</span> optim
+<span style="color:#f92672">import</span> torch
+<span style="color:#f92672">import</span> torch.nn <span style="color:#66d9ef">as</span> nn
+<span style="color:#f92672">import</span> torch.nn.parallel
+<span style="color:#f92672">import</span> torch.optim
+<span style="color:#f92672">import</span> torch.utils.data
+<span style="color:#f92672">import</span> torch.utils.data.distributed
+<span style="color:#f92672">import</span> torchvision.transforms <span style="color:#66d9ef">as</span> transforms
+<span style="color:#f92672">import</span> torchvision.datasets <span style="color:#66d9ef">as</span> datasets
+<span style="color:#f92672">from</span> torch.autograd <span style="color:#f92672">import</span> Variable
+<span style="color:#f92672">from</span> model.EfficientNetV2 <span style="color:#f92672">import</span> efficientnetv2_s
+
+
+<span style="color:#f92672">import</span> torch
+<span style="color:#f92672">import</span> torch.utils.data <span style="color:#66d9ef">as</span> data
+<span style="color:#f92672">import</span> torch.nn <span style="color:#66d9ef">as</span> nn
+<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+
+<span style="color:#75715e"># 固定随机数种子, 方便调试</span>
+torch<span style="color:#f92672">.</span>manual_seed(<span style="color:#ae81ff">42</span>)
+torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span>manual_seed_all(<span style="color:#ae81ff">42</span>)
+torch<span style="color:#f92672">.</span>cuda<span style="color:#f92672">.</span>manual_seed(<span style="color:#ae81ff">42</span>)
+np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">42</span>)
+
+<span style="color:#75715e"># 划分训练集和验证集</span>
+
+data_all <span style="color:#f92672">=</span> data_all<span style="color:#f92672">.</span>transpose((<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>))
+data_all <span style="color:#f92672">=</span> data_all<span style="color:#f92672">.</span>astype(np<span style="color:#f92672">.</span>float32)
+data_all <span style="color:#f92672">/=</span> <span style="color:#ae81ff">255</span>
+
+<span style="color:#75715e"># 打乱数据集</span>
+tmp <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(list(range(label<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>])))
+np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>shuffle(tmp)
+data_all <span style="color:#f92672">=</span> data_all[tmp]
+label <span style="color:#f92672">=</span> label[tmp]
+
+<span style="color:#75715e"># 划分</span>
+n <span style="color:#f92672">=</span> int(label<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#ae81ff">0.75</span>)
+train_data <span style="color:#f92672">=</span> data_all[:n, <span style="color:#f92672">...</span>]     <span style="color:#75715e"># 3/4 给训练集</span>
+train_label <span style="color:#f92672">=</span> label[:n]
+
+val_data <span style="color:#f92672">=</span> data_all[n:, <span style="color:#f92672">...</span>]       <span style="color:#75715e"># 1/4 给验证集</span>
+val_label <span style="color:#f92672">=</span> label[n:]
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RockData</span>(data<span style="color:#f92672">.</span>Dataset):
+    <span style="color:#66d9ef">def</span> __init__(self, train<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
+        super(RockData, self)<span style="color:#f92672">.</span>__init__()
+        self<span style="color:#f92672">.</span>train <span style="color:#f92672">=</span> train
+
+    <span style="color:#66d9ef">def</span> __getitem__(self, index):
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>train:
+            <span style="color:#66d9ef">return</span> train_data[index, <span style="color:#f92672">...</span>], train_label[index]
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">return</span> val_data[index, <span style="color:#f92672">...</span>], val_label[index]
+
+    <span style="color:#66d9ef">def</span> __len__(self):
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>train:
+            <span style="color:#66d9ef">return</span> train_label<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">return</span> val_label<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]
+
+</code></pre></div><h4 id="set-model-and-train-data">set model and train data</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">adjust_learning_rate</span>(optimizer, epoch):
+    <span style="color:#e6db74">&#34;&#34;&#34;Sets the learning rate to the initial LR decayed by 10 every 30 epochs&#34;&#34;&#34;</span>
+    modellrnew <span style="color:#f92672">=</span> modellr <span style="color:#f92672">*</span> (<span style="color:#ae81ff">0.1</span> <span style="color:#f92672">**</span> (epoch <span style="color:#f92672">//</span> <span style="color:#ae81ff">50</span>))
+    print(<span style="color:#e6db74">&#34;lr:&#34;</span>, modellrnew)
+    <span style="color:#66d9ef">for</span> param_group <span style="color:#f92672">in</span> optimizer<span style="color:#f92672">.</span>param_groups:
+        param_group[<span style="color:#e6db74">&#39;lr&#39;</span>] <span style="color:#f92672">=</span> modellrnew
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clc_acc</span>(pre, label):
+    acc <span style="color:#f92672">=</span> (pre <span style="color:#f92672">==</span> label)<span style="color:#f92672">.</span>sum() <span style="color:#f92672">/</span> pre<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]
+    <span style="color:#66d9ef">return</span> acc
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">train</span>():
+    eloss <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    model<span style="color:#f92672">.</span>train()
+    <span style="color:#66d9ef">for</span> step, (img, label) <span style="color:#f92672">in</span> enumerate(trainloader):
+        optimizer<span style="color:#f92672">.</span>zero_grad()
+        img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>to(<span style="color:#e6db74">&#39;cuda&#39;</span>)
+        label <span style="color:#f92672">=</span> label<span style="color:#f92672">.</span>to(torch<span style="color:#f92672">.</span>int64)<span style="color:#f92672">.</span>to(<span style="color:#e6db74">&#39;cuda&#39;</span>)
+        out <span style="color:#f92672">=</span> model(img)
+        loss <span style="color:#f92672">=</span> closs(out, label)
+        loss<span style="color:#f92672">.</span>backward()
+        optimizer<span style="color:#f92672">.</span>step()
+        <span style="color:#75715e"># if step % 100 == 0:</span>
+            <span style="color:#75715e"># print(f&#34;Step [{step}]/[{len(trainloader)}]: {loss.item()}&#34;)</span>
+        eloss <span style="color:#f92672">+=</span> loss<span style="color:#f92672">.</span>item()
+    eloss <span style="color:#f92672">/=</span> len(trainloader)
+    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Epoch [</span><span style="color:#e6db74">{</span>epoch<span style="color:#e6db74">}</span><span style="color:#e6db74">]/[</span><span style="color:#e6db74">{</span>epochs<span style="color:#e6db74">}</span><span style="color:#e6db74">] loss: </span><span style="color:#e6db74">{</span>eloss<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test</span>():
+    model<span style="color:#f92672">.</span>eval()
+    pre <span style="color:#f92672">=</span> []
+    label <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> step, (img, l) <span style="color:#f92672">in</span> enumerate(testloader):
+        img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>to(<span style="color:#e6db74">&#39;cuda&#39;</span>)
+        <span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+            out <span style="color:#f92672">=</span> model(img)
+        pre<span style="color:#f92672">.</span>append(torch<span style="color:#f92672">.</span>argmax(out, dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>cpu()<span style="color:#f92672">.</span>detach()<span style="color:#f92672">.</span>numpy())
+        label<span style="color:#f92672">.</span>append(l<span style="color:#f92672">.</span>cpu()<span style="color:#f92672">.</span>detach()<span style="color:#f92672">.</span>numpy())
+    
+    pre <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>concatenate(pre, <span style="color:#ae81ff">0</span>)
+    label <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>concatenate(label, <span style="color:#ae81ff">0</span>)
+    acc <span style="color:#f92672">=</span> clc_acc(pre, label)
+    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;acc: </span><span style="color:#e6db74">{</span>acc<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+
+trainloader <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>DataLoader(RockData(), batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>, shuffle<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+testloader <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>DataLoader(RockData(<span style="color:#66d9ef">False</span>), batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>, shuffle<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+
+model <span style="color:#f92672">=</span> efficientnetv2_s(num_classes<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+model <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>to(<span style="color:#e6db74">&#39;cuda&#39;</span>)
+
+optimizer <span style="color:#f92672">=</span> torch<span style="color:#f92672">.</span>optim<span style="color:#f92672">.</span>Adam(model<span style="color:#f92672">.</span>parameters(), lr<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0001</span>)
+closs <span style="color:#f92672">=</span> nn<span style="color:#f92672">.</span>CrossEntropyLoss()<span style="color:#f92672">.</span>to(<span style="color:#e6db74">&#39;cuda&#39;</span>)
+
+epochs <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+
+<span style="color:#e6db74">&#39;&#39;&#39;for epoch in range(1, epochs + 1):
+</span><span style="color:#e6db74">    adjust_learning_rate(optimizer, epoch)
+</span><span style="color:#e6db74">    train()
+</span><span style="color:#e6db74">    test()
+</span><span style="color:#e6db74">    if (epoch+1) % 5 == 0:
+</span><span style="color:#e6db74">        save_model(model, optimizer, epoch)&#39;&#39;&#39;</span>
+
+<span style="color:#66d9ef">for</span> epoch <span style="color:#f92672">in</span> range(epochs):
+    train()
+    test()
+    <span style="color:#66d9ef">if</span> (epoch<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+        save_model(model, optimizer, epoch)
+</code></pre></div><h3 id="save-results-as">save results as</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+
+test_imgs_1 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>load(<span style="color:#e6db74">&#39;/home/aistudio/test/test_imgs.npy&#39;</span>)
+test_imgs <span style="color:#f92672">=</span> test_imgs_1[:,<span style="color:#ae81ff">80</span>:<span style="color:#ae81ff">160</span>,<span style="color:#ae81ff">80</span>:<span style="color:#ae81ff">160</span>,:]
+test_imgs <span style="color:#f92672">=</span> test_imgs<span style="color:#f92672">.</span>transpose((<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>))
+test_imgs <span style="color:#f92672">=</span> test_imgs<span style="color:#f92672">.</span>astype(np<span style="color:#f92672">.</span>float32)
+test_imgs <span style="color:#f92672">/=</span> <span style="color:#ae81ff">255</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_csv</span>(pre, name):
+    ids <span style="color:#f92672">=</span> list(range(<span style="color:#ae81ff">1</span>, len(pre)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>))
+    ids <span style="color:#f92672">=</span> [str(anid) <span style="color:#66d9ef">for</span> anid <span style="color:#f92672">in</span> ids]
+
+    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;id&#39;</span>: ids, <span style="color:#e6db74">&#39;label&#39;</span>: pre})
+    df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">.csv&#39;</span>, index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">testData</span>(data<span style="color:#f92672">.</span>Dataset):
+    <span style="color:#66d9ef">def</span> __init__(self):
+        super(testData, self)<span style="color:#f92672">.</span>__init__()
+
+    <span style="color:#66d9ef">def</span> __getitem__(self, index):
+        <span style="color:#66d9ef">return</span> test_imgs[index, <span style="color:#f92672">...</span>]
+    <span style="color:#66d9ef">def</span> __len__(self):
+        <span style="color:#66d9ef">return</span> test_imgs<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inference</span>(loader, model):
+    model<span style="color:#f92672">.</span>eval()
+    pre <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">for</span> inx, img <span style="color:#f92672">in</span> enumerate(loader):
+        img <span style="color:#f92672">=</span> img<span style="color:#f92672">.</span>to(<span style="color:#e6db74">&#39;cuda&#39;</span>)
+        <span style="color:#66d9ef">with</span> torch<span style="color:#f92672">.</span>no_grad():
+            out <span style="color:#f92672">=</span> model(img)
+        pre<span style="color:#f92672">.</span>append(torch<span style="color:#f92672">.</span>argmax(out, dim<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>cpu()<span style="color:#f92672">.</span>detach()<span style="color:#f92672">.</span>numpy())
+
+    pre <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>concatenate(pre, <span style="color:#ae81ff">0</span>)
+
+    <span style="color:#66d9ef">return</span> pre
+
+loader <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>DataLoader(testData(), <span style="color:#ae81ff">17</span>, <span style="color:#66d9ef">False</span>)
+
+mp <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;model/checkpoint_17.pt&#39;</span>
+model <span style="color:#f92672">=</span> efficientnetv2_s(num_classes<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+model<span style="color:#f92672">.</span>load_state_dict(torch<span style="color:#f92672">.</span>load(mp)[<span style="color:#e6db74">&#39;net&#39;</span>])
+model <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>to(<span style="color:#e6db74">&#39;cuda&#39;</span>)
+
+pre <span style="color:#f92672">=</span> inference(loader, model)
+
+make_csv(pre, <span style="color:#e6db74">&#39;submition&#39;</span>)
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

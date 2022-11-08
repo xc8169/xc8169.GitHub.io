@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lives on Xiao Chuang</title>
+    <link>https://xc8169.github.io/life/</link>
+    <description>Recent content in Lives on Xiao Chuang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://xc8169.github.io/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Delicacy</title>
+      <link>https://xc8169.github.io/life/food/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/life/food/</guid>
+      <description>Some delicacy This is one of most famous chinese food called Shaomai (Steamed Pork Dumplings)
+The special food called hundun.
+jianjiao(Dumplings)</description>
+    </item>
+    
+    <item>
+      <title>Trips</title>
+      <link>https://xc8169.github.io/life/geology/</link>
+      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://xc8169.github.io/life/geology/</guid>
+      <description>In October 2022 I’ve visited Chaohu, Anhui province in china with my classmates for a week. We drove a lot through the beautiful natural scenery and saw a lot of different rocks: basal conglomerate, siltsstone, shale, bioclastic limestone.</description>
+    </item>
+    
+  </channel>
+</rss>
